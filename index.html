@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21183f">
+<title>For Sangita 💜 | From Kuchupu</title>
+<style>
+:root{color-scheme:dark;--night:#120d25;--lavender:#d7c3ff;--pink:#ffd0e9;--white:#fff8ff;--glass:rgba(255,255,255,.075);--line:rgba(235,218,255,.22)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{margin:0;min-height:100vh;color:var(--white);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 12% 8%,#62488d 0,transparent 34%),radial-gradient(ellipse at 90% 28%,#743d79 0,transparent 32%),radial-gradient(ellipse at 50% 95%,#432b68 0,transparent 38%),linear-gradient(145deg,#120d25,#2a1b48 55%,#1b122c);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#fff 0.7px,transparent .7px);background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent 85%);z-index:0}
+main{position:relative;z-index:1}
+section{padding:76px 18px;max-width:960px;margin:auto}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:48px;padding-bottom:48px}
+.kicker{font:11px/1.8 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--pink)}
+h1{font-size:clamp(40px,8.7vw,78px);line-height:1.07;letter-spacing:-1.8px;margin:18px 0;color:#f7edff;text-shadow:0 0 34px #c5a5ff75}
+h2{font-size:clamp(28px,5.8vw,43px);line-height:1.15;color:#efdcff;text-align:center;margin:0 0 18px}
+h3{color:#f7d8f0}
+p{line-height:1.85}
+.intro{max-width:560px;color:#e8ddfa;margin:0 auto}
+.moon{font-size:50px;filter:drop-shadow(0 0 20px #d7bfff);margin:20px;animation:moon-glow 4s ease-in-out infinite}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;max-width:520px;margin:30px auto 12px}
+.time{padding:19px 5px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035));backdrop-filter:blur(12px);box-shadow:0 12px 35px #09051730}
+.time span{display:block;font:bold clamp(23px,5.8vw,39px) Arial,sans-serif;color:#ffe0f3;font-variant-numeric:tabular-nums}
+.time small{display:block;font:10px Arial,sans-serif;letter-spacing:1.5px;margin-top:9px;color:#dfd0ff}
+#status{min-height:30px;color:#f4d9ef}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:14px 23px;margin:9px 5px;background:linear-gradient(110deg,#e5c9ff,#ffcae9);color:#35204c;font:bold 14px Arial,sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 8px 26px #11091e44;transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 30px #11091e66}
+.btn:focus-visible{outline:3px solid white;outline-offset:4px}
+.btn:disabled{opacity:.65;cursor:not-allowed}
+.small{font:12px/1.8 Arial,sans-serif;color:#d8cce9;max-width:500px}
+.panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.045));border-radius:26px;padding:clamp(20px,4vw,32px);box-shadow:0 20px 60px #09051725;backdrop-filter:blur(12px)}
+.section-intro{text-align:center;color:#e4d7f4;max-width:620px;margin:0 auto 30px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.photo{min-height:180px;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#574778,#9b6c9d,#e6b8db);position:relative;border:1px solid #ffffff28;isolation:isolate;box-shadow:0 14px 32px #09051725}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;z-index:1;transition:transform .5s ease}
+.photo:hover img{transform:scale(1.045)}
+.photo .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;color:#fff;font-size:18px;text-shadow:0 2px 12px #271638;background:linear-gradient(145deg,#574778,#9b6c9d,#e6b8db);z-index:0}
+.caption{position:absolute;bottom:0;left:0;right:0;padding:38px 13px 14px;background:linear-gradient(transparent,#160e2be8);font:13px Arial,sans-serif;color:#fff;z-index:2}
+.letter{background:linear-gradient(145deg,#fff7ff,#f1e5ff);color:#4a315e;border-radius:24px;padding:clamp(22px,5vw,36px);line-height:1.9;box-shadow:0 20px 60px #09051730}
+.letter h2{color:#7a4c91}
+.letter p{line-height:1.95}
+.signature{text-align:right;font-size:19px;color:#8b4c86}
+.music-row{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
+.music-note{font-size:34px}
+.music-copy{flex:1;min-width:190px}
+.pre-countdown-music{width:min(680px,100%);margin:22px auto 0;text-align:left}
+.pre-countdown-music audio{width:100%;margin-top:12px;accent-color:#d7c3ff}
+.video-frame{width:100%;max-width:760px;margin:20px auto 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#080511;box-shadow:0 20px 60px #09051745}
+.video-frame video{display:block;width:100%;max-height:70vh;aspect-ratio:16/9;object-fit:contain;background:#080511}
+.video-note{text-align:center;color:#e4d7f4;font:12px/1.8 Arial,sans-serif;margin-top:12px}
+footer{text-align:center;padding:30px 15px 42px;color:#d8cce9;font:12px/1.8 Arial,sans-serif;position:relative;z-index:1}
+.heart{position:fixed;bottom:-40px;z-index:5;pointer-events:none;animation:rise linear forwards;filter:drop-shadow(0 0 8px #f6b8ff)}
+@keyframes rise{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+@keyframes moon-glow{50%{filter:drop-shadow(0 0 30px #f2d8ff)}}
+.hidden{display:none!important}
+@media(min-width:650px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}.photo{min-height:240px}}
+@media(max-width:420px){section{padding:58px 15px}.countdown{gap:6px}.time{padding:14px 2px}.time small{font-size:9px;letter-spacing:1px}.photo{min-height:145px}.btn{padding:13px 17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.gift-buttons{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0}
+.reveal-panel{animation:reveal-in .75s ease both}
+@keyframes reveal-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.envelope-wrap{display:flex;justify-content:center;align-items:center;min-height:230px;margin:18px auto 28px;perspective:900px}
+.envelope{position:relative;width:min(340px,86vw);height:190px;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 18px 22px #09051755);transition:transform .3s ease}
+.envelope:hover{transform:translateY(-4px)}
+.envelope-back{position:absolute;inset:0;border-radius:8px;background:#d9b7ed}
+.envelope-paper{position:absolute;left:8%;right:8%;top:8px;height:160px;padding:18px 10px;background:#fff7ff;color:#714b86;border-radius:7px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform .85s ease;z-index:1}
+.envelope-flap{position:absolute;left:0;right:0;top:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-top:105px solid #f1d4fa;transform-origin:top;transition:transform .7s ease;z-index:3}
+.envelope-front{position:absolute;inset:0;border-radius:8px;background:linear-gradient(145deg,#d6b3e9,#b889d2);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:2}
+.envelope-seal{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:4;font-size:31px;transition:opacity .3s ease}
+.envelope.open .envelope-flap{transform:rotateX(180deg);z-index:0}
+.envelope.open .envelope-paper{transform:translateY(-92px);transition-delay:.25s}
+.envelope.open .envelope-seal{opacity:0}
+.envelope-hint{font:12px/1.8 Arial,sans-serif;color:#e4d7f4;text-align:center}
+@media(max-width:380px){.envelope-flap{border-left-width:43vw;border-right-width:43vw}}
+@media(prefers-reduced-motion:reduce){.reveal-panel,.envelope-paper,.envelope-flap{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<main>
+<section class="hero" id="top">
+  <div class="kicker">An online universe made just for my cutipie</div>
+  <div class="moon">☾ ✨</div>
+  <h1>Hellooow Miss Sangita,<br> Some days are special and then there's the day the world got a little more beautiful because you were born.</h1>
+  <p class="intro">You are a very special person in the world💜</p>
+  <div class="panel pre-countdown-music">
+    <div class="music-row" style="justify-content:flex-start">
+      <div class="music-note">🎧</div>
+      <div class="music-copy"><b>Our Fevorite music while you wait 💜</b><br><span class="small">That special soundtrack to give you company before the birthday surprise unlocks.</span></div>
+    </div>
+    <audio id="waitingSong" controls preload="none">
+      <source src="music/countdown.mp3" type="audio/mpeg">
+      Your browser does not support audio playback.
+    </audio>
+    <p class="small">You taught me that the best things in life come without notice and without a plan. You're the best surprise of my life. ❤️ Your first handmade muffler for me, and my first live website for you. 🧣💻💖
+
+You wrapped me in your love with your own hands, and I’ve tried to wrap my love for you into my very first website. 🥹💕 One is made with your hands, the other with my heart.</p>
+  </div>
+  <div class="countdown" aria-label="Birthday countdown">
+    <div class="time"><span id="days">--</span><small>DAYS</small></div>
+    <div class="time"><span id="hours">--</span><small>HOURS</small></div>
+    <div class="time"><span id="minutes">--</span><small>MINUTES</small></div>
+    <div class="time"><span id="seconds">--</span><small>SECONDS</small></div>
+  </div>
+  <p id="status">Counting down to your beautiful day… 💌</p>
+  <button class="btn" id="unlock" disabled aria-describedby="surprise-note">🔒 A surprise is waiting for you</button>
+  <p class="small" id="surprise-note">Preview countdown: the surprise unlocks at 12:05 PM on 25 October 2026 (Indian Standard Time).</p>
+  <p class="small">A few little pieces of us are waiting beyond the countdown. 💜</p>
+</section>
+
+<section id="surprise-hub" class="hidden">
+  <div class="panel hub" style="text-align:center">
+    <div style="font-size:48px">🎂💜🌷</div><p class="kicker">Your birthday surprise has arrived</p>
+    <h2>Today is all about you, Sangita!</h2>
+    <p>Make a wish, Sangita. The universe has one very important reminder for you: you are loved.</p>
+    <p class="section-intro">Five little surprises are waiting. Open them one by one, whenever you are ready. 💌</p>
+    <div class="gift-buttons"><button class="btn" id="songBtn">🎶 Reveal our birthday song</button><button class="btn" id="photosBtn">📸 Reveal our special photos</button><button class="btn" id="heartsBtn">💖 Send you a sky full of hearts</button><button class="btn" id="videoBtn">🎬 Reveal your personal video</button><button class="btn" id="letterBtn">💌 Open your secret letter</button></div>
+  </div>
+</section>
+
+<section id="music" class="reveal-panel hidden">
+  <h2>Sabar ka fal meetha hota hei madam 🎶</h2>
+  <p class="section-intro"> A music button is here for you.</p>
+  <div class="panel music-row">
+    <div class="music-note">🎵</div>
+    <div class="music-copy" style="text-align:left"><b>Our birthday soundtrack</b><br><span class="small">আগত দিনগুলো তোমার আনন্দে কাটুক, প্রতিটি স্বপ্ন পূরণ হোক, প্রতিটি মুহূর্ত হয়ে উঠুক বিশেষ, জমিয়ে আনন্দ করো, কারণ তুমি সেটা ডিজার্ভ করো</span></div>
+    <button class="btn" id="musicBtn">▶ Play music</button>
+  </div>
+  <audio id="song" src="music/birthday.mp3" preload="none" loop></audio>
+</section>
+
+<section id="memories" class="reveal-panel hidden">
+  <h2>Little pieces of us 📸</h2>
+  <p class="section-intro">A few frames, a thousand feelings. Replace these sample cards with your favourite photos together.</p>
+  <div class="gallery">
+    <div class="photo"><div class="placeholder">Your favourite photo together 💜</div><img src="images/sangita1.jpg" alt="Memory one" onerror="this.style.display='none'"><div class="caption">My favourite smile</div></div>
+    <div class="photo"><div class="placeholder">A moment you love ✨</div><img src="images/sangita2.jpg" alt="Memory two" onerror="this.style.display='none'"><div class="caption">A little moment, forever</div></div>
+    <div class="photo"><div class="placeholder">A beautiful memory 🌷</div><img src="images/sangita3.jpg" alt="Memory three" onerror="this.style.display='none'"><div class="caption">My happy place</div></div>
+    <div class="photo"><div class="placeholder">A beautiful memory 🌷</div><img src="images/sangita4.jpg" alt="Memory four" onerror="this.style.display='none'"><div class="caption">December ki raani</div></div>
+  </div>
+</section>
+
+<section id="hearts" class="reveal-panel hidden">
+  <h2>A sky full of hearts 💖</h2>
+  <p class="section-intro">A little shower of love, made just for you, Sangita. 💜</p>
+  <div class="panel" style="text-align:center">
+    <div style="font-size:54px;margin:8px">💜 💗 💕 ✨ 🌷</div>
+    <p>Whenever you need a reminder, remember how loved you are.</p>
+    <button class="btn" id="heartsAgainBtn">Send you a sky full of hearts 💖</button>
+  </div>
+</section>
+
+<section id="personal-video" class="reveal-panel hidden">
+  <h2>A little video, made just for you 🎬💜</h2>
+  <p class="section-intro">A personal memory for my Kuchupu. Take your time and enjoy this little surprise.</p>
+  <div class="panel" style="text-align:center">
+    <div class="video-frame">
+      <video id="birthdayVideo" controls playsinline preload="metadata" poster="images/sangita1.jpg">
+        <source src="video/sangita-special.mp4" type="video/mp4">
+        Your browser does not support HTML5 video. Please try a modern browser.
+      </video>
+    </div>
+    <p class="video-note">Replace the sample video path with your own MP4 at <code>video/sangita-special.mp4</code>.</p>
+  </div>
+</section>
+
+<section id="love-letter" class="reveal-panel hidden">
+  <h2>A letter from my heart 💌</h2>
+  <p class="section-intro">A few words I hope you can keep close, today and always.</p>
+  <div class="envelope-wrap" id="envelopeWrap">
+    <button class="envelope" id="envelope" aria-label="Open the secret love letter" type="button">
+      <span class="envelope-back"></span><span class="envelope-paper"><strong>For my Kuchupu 💜</strong><span>One little letter, from my heart</span></span><span class="envelope-flap"></span><span class="envelope-front"></span><span class="envelope-seal">💌</span>
+    </button>
+  </div>
+  <p class="envelope-hint" id="envelopeHint">Tap the envelope to open your secret letter.</p>
+  <article class="letter hidden" id="letter">
+    <h2>Happy Birthday, Sangita! 💜</h2>
+    <p>My dearest Sangita,</p>
+    <p>Happy Birthday Kuchupu! ❤️ If I could give you one gift, I would let you see yourself through my eyes for a moment. Maybe then you would understand just how precious, beautiful, and special you are to me.</p>
+    <p>You bring a kind of warmth into my life that is hard to explain. I hope this new year brings you peace in your heart, courage for every dream you chase, reasons to smile on ordinary days, and people who care for you as deeply as you deserve.</p>
+    <p>I may not always find the perfect words, but I want to keep showing you through my actions that your happiness matters to me. I want to cheer for your dreams, listen when you need me, laugh with you over little things, and make more beautiful memories together.</p>
+    <p>Today, I hope you feel loved in a hundred little ways. Keep shining, keep dreaming, and please never forget how wonderful you are.</p>
+    <p>Happy Birthday, my favourite person. Here's to your smile, your dreams, and all the lovely moments still waiting for us. 🌙✨</p>
+    <p class="signature">With all my love,<br><b>Your Pritom❤️</b></p>
+ <p>তোমায় অনেক কিছু বলার আছে, কিন্তু কোথা থেকে শুরু করব বুঝতে পারছি না।
+
+তোমার চোখে হয়তো আমি সেই মানুষ, যে তোমার অনুভূতিগুলো সবসময় বুঝতে পারে না। হয়তো কখনো কখনো আমি ব্যাস্ত থেকেছি, যেখানে তোমার পাশে দাঁড়ানো দরকার ছিল। হয়তো আমার কথায় তোমার কষ্ট লেগেছে। বিশ্বাস করো, কোনো কিছু ইচ্ছাকৃত করি না।<br>
+
+ভুল বোঝাবুঝি হতেই পারে, কিন্তু তাতে ভালোবাসা কমে না-বরং বোঝার ইচ্ছেটা বাড়ে। আমি চাই, আমরা সেই দুইজন মানুষ হই, যারা ঝগড়ার মাঝেও ভালোবাসা খুঁজে পায়।<br>
+
+তুমি আমার জীবনের এমন এক অংশ, যাকে ছাড়া বাকিটা অসম্পূর্ণ। আমি তোমাকে চাই-তোমার হাসি, তোমার রাগ, তোমার নীরবতা সবকিছু। আমি তোমার ভালো থাকার অংশ হতে চাই, তোমার খারাপ দিনগুলোর আশ্রয় হতে চাই।</p>
+  </article>
+</section>
+
+</main>
+<footer>Made with endless affection by Pritom · For Sangita 💜</footer>
+
+<script>
+"use strict";
+const birthday = new Date("2026-10-25T12:05:00+05:30").getTime();
+const $ = id => document.getElementById(id);
+let surpriseUnlocked = false;
+function updateCountdown(){
+  const remaining = birthday - Date.now();
+  if(remaining <= 0){
+    ["days","hours","minutes","seconds"].forEach(id => $(id).textContent = "00");
+    $("status").textContent = "It's your birthday, Sangita! Happy Birthday, my love! 🎂💜";
+    $("unlock").disabled = false;
+    $("unlock").textContent = surpriseUnlocked ? "💜 Surprise unlocked" : "💌 Unlock your birthday surprise";
+    return;
+  }
+  $("days").textContent = Math.floor(remaining/86400000).toString();
+  $("hours").textContent = Math.floor((remaining%86400000)/3600000).toString().padStart(2,"0");
+  $("minutes").textContent = Math.floor((remaining%3600000)/60000).toString().padStart(2,"0");
+  $("seconds").textContent = Math.floor((remaining%60000)/1000).toString().padStart(2,"0");
+}
+$("unlock").addEventListener("click",()=>{
+  if(Date.now() < birthday || surpriseUnlocked) return;
+  surpriseUnlocked = true;
+  $("surprise-hub").classList.remove("hidden");
+  $("unlock").textContent = "💜 Surprise unlocked";
+  $("unlock").disabled = true;
+  $("surprise-hub").scrollIntoView({behavior:"smooth",block:"start"});
+  for(let i=0;i<24;i++) setTimeout(createHeart,i*90);
+});
+$("letterBtn").addEventListener("click",()=>{
+  $("love-letter").classList.remove("hidden");
+  $("love-letter").scrollIntoView({behavior:"smooth",block:"start"});
+});
+$("envelope").addEventListener("click",()=>{
+  $("envelope").classList.add("open");
+  $("envelopeHint").textContent = "A little piece of my heart, just for you. 💜";
+  setTimeout(() => $("letter").classList.remove("hidden"),650);
+});
+$("photosBtn").addEventListener("click",()=>{
+  $("memories").classList.remove("hidden");
+  $("memories").scrollIntoView({behavior:"smooth",block:"start"});
+});
+$("songBtn").addEventListener("click",()=>{
+  $("music").classList.remove("hidden");
+  $("music").scrollIntoView({behavior:"smooth",block:"start"});
+});
+$("videoBtn").addEventListener("click",()=>{
+  $("personal-video").classList.remove("hidden");
+  $("personal-video").scrollIntoView({behavior:"smooth",block:"start"});
+});
+function createHeart(){
+  const h=document.createElement("span");h.className="heart";
+  h.textContent=["💜","💗","💕","✨","🌷"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";h.style.fontSize=(15+Math.random()*22)+"px";
+  h.style.animationDuration=(5+Math.random()*5)+"s";document.body.appendChild(h);
+  setTimeout(()=>h.remove(),10500);
+}
+$("musicBtn").addEventListener("click",async()=>{
+  const song=$("song");
+  if(song.paused){try{await song.play();$("musicBtn").textContent="⏸ Pause music";}
+  catch(e){alert("Add your song as music/birthday.mp3, then upload the website again.");}}
+  else{song.pause();$("musicBtn").textContent="▶ Play music";}
+});
+$("heartsBtn").addEventListener("click",()=>{
+  $("hearts").classList.remove("hidden");
+  $("hearts").scrollIntoView({behavior:"smooth",block:"start"});
+  for(let i=0;i<55;i++)setTimeout(createHeart,i*75);
+});
+$("heartsAgainBtn").addEventListener("click",()=>{for(let i=0;i<55;i++)setTimeout(createHeart,i*75);});
+updateCountdown();setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
